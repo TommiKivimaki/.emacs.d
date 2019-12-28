@@ -6,6 +6,7 @@
 ;; Packages to be installed
 (defvar my-packages '(beacon
 		      dired-narrow
+		      flycheck
 		      magit
 		      markdown-mode
 		      swift-mode
@@ -155,3 +156,9 @@
 (setq which-key-allow-evil-operators t)
 (setq which-key-show-operator-stage-maps t)
 
+
+;;
+;; FLYCHECK
+;; http://www.flycheck.org/en/latest/
+;; install syntax checking tools like 'npm install eslint' for JavaScript
+(add-hook 'after-init-hook #'global-flycheck-mode)
