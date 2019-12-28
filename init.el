@@ -149,9 +149,8 @@
 ;; WHICH-KEY
 ;; https://github.com/justbur/emacs-which-key
 (require 'which-key)
+;; I could use hooks to enable which-key only for specific modes
 (which-key-mode)
-;;(add-hook 'org-mode-hook 'which-key-mode)
-;;(add-hook 'cider-mode-hook 'which-key-mode)
 ;; Show VIM keys too
 (setq which-key-allow-evil-operators t)
 (setq which-key-show-operator-stage-maps t)
