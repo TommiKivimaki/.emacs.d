@@ -4,7 +4,8 @@
 			 ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 ;; Packages to be installed
-(defvar my-packages '(dired-narrow
+(defvar my-packages '(beacon
+		      dired-narrow
 		      magit
 		      markdown-mode
 		      swift-mode))
@@ -133,3 +134,7 @@
 ;; MAGIT
 ;;
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; Configure beacon mode to easily see the cursor when scrolling
+(beacon-mode 1)
+(setq beacon-blink-duration 0.8)
