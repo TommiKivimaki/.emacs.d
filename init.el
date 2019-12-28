@@ -1,10 +1,11 @@
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+                         ("melpa" . "https://melpa.org/packages/")
+			 ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 ;; Packages to be installed
-(defvar my-packages '(markdown-mode
+(defvar my-packages '(dired-narrow
+		      markdown-mode
 		      swift-mode))
 
 ;; Install packages
@@ -14,13 +15,6 @@
     (package-refresh-contents)
     (package-install p))
   (add-to-list 'package-selected-packages p))
-
-
-
-
-
-
-
 
 
 ;; Set default theme
@@ -85,10 +79,16 @@
 (setq inhibit-startup-screen t)
 
 
-;; dired-mode config
+;;
+;; DIRED
+;;
 ;; Use 'a' to visit a directory without creating a new buffer
 (put 'dired-find-alternate-file 'disabled nil)
 ;; ls switches
-(setq-default dired-listing-switches "-alh")
+;;(setq-default dired-listing-switches "-alh")
 ;; On C copy recursively by default
 (setq dired-recursive-copies 'always)
+;; dired-narrow starts fussy search with /
+;;(http://pragmaticemacs.com/emacs/dynamically-filter-directory-listing-with-dired-narrow/)
+(require 'dired)
+(define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
