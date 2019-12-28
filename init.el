@@ -5,6 +5,7 @@
 
 ;; Packages to be installed
 (defvar my-packages '(dired-narrow
+		      magit
 		      markdown-mode
 		      swift-mode))
 
@@ -126,3 +127,9 @@
 
 ;; Use visible feedback and not the system bell
 (setq visible-bell t)
+
+
+;;
+;; MAGIT
+;;
+(global-set-key (kbd "C-x g") 'magit-status)
