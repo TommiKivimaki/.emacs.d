@@ -92,3 +92,24 @@
 ;;(http://pragmaticemacs.com/emacs/dynamically-filter-directory-listing-with-dired-narrow/)
 (require 'dired)
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
+
+
+;; Change font size
+(defun zoom-in ()
+  (interactive)
+  (let ((x (+ (face-attribute 'default :height)
+	      10)))
+    (set-face-attribute 'default nil :height x)))
+
+(defun zoom-out ()
+  (interactive)
+  (let ((x (- (face-attribute 'default :height)
+	      10)))
+    (set-face-attribute 'default nil :height x)))
+
+(define-key global-map (kbd "C-1") 'zoom-in)
+(define-key global-map (kbd "C-0") 'zoom-out)
+
+
+;; Disable scroll bar
+;;(scroll-bar-mode -1)
