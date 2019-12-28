@@ -1,25 +1,3 @@
-;;(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;;'(package-selected-packages (quote (markdown-mode swift-mode))))
-;;(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;;)
-
-;;(require 'package)
-;;(add-to-list 'package-archives
-;;             '("melpa-stable" . "https://stable.melpa.org/packages/"))
-;;(package-initialize)
-
-
-
-
-
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
@@ -97,11 +75,20 @@
 
 
 ;; Set indentation for CSS
-;;(setq css-indent-offset 2)
+(setq css-indent-offset 2)
 
 ;; Enable using right side ALT as a modifier and not META key
 (setq mac-option-key-is-meta t)
 (setq mac-right-option-modifier nil)
 
 ;; Get rid of start-up screen
-;;(setq inhibit-startup-screen t)
+(setq inhibit-startup-screen t)
+
+
+;; dired-mode config
+;; Use 'a' to visit a directory without creating a new buffer
+(put 'dired-find-alternate-file 'disabled nil)
+;; ls switches
+(setq-default dired-listing-switches "-alh")
+;; On C copy recursively by default
+(setq dired-recursive-copies 'always)
