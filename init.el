@@ -8,7 +8,8 @@
 		      dired-narrow
 		      magit
 		      markdown-mode
-		      swift-mode))
+		      swift-mode
+		      which-key))
 
 ;; Install packages
 (package-initialize)
@@ -132,9 +133,26 @@
 
 ;;
 ;; MAGIT
-;;
+;; https://github.com/magit/magit/wiki/Cheatsheet
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;; Configure beacon mode to easily see the cursor when scrolling
+
+;;
+;; BEACON
+;; https://github.com/Malabarba/beacon
+;; Visual cursor position when scrolling and jumping
 (beacon-mode 1)
 (setq beacon-blink-duration 0.8)
+
+
+;;
+;; WHICH-KEY
+;; https://github.com/justbur/emacs-which-key
+(require 'which-key)
+(which-key-mode)
+;;(add-hook 'org-mode-hook 'which-key-mode)
+;;(add-hook 'cider-mode-hook 'which-key-mode)
+;; Show VIM keys too
+(setq which-key-allow-evil-operators t)
+(setq which-key-show-operator-stage-maps t)
+
