@@ -52,7 +52,7 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 ;; Set back-up directory
- (setq backup-directory-alist `(("." . ,(expand-file-name
+(setq backup-directory-alist `(("." . ,(expand-file-name
  					(concat user-emacs-directory "backups")))))
 
 ;; Set how many backups are stored
@@ -113,3 +113,16 @@
 
 ;; Disable scroll bar
 ;;(scroll-bar-mode -1)
+
+
+;; Remember cursor position when reopening files
+(setq save-place-file (expand-file-name "places" user-emacs-directory))
+(setq save-place-forget-unreadable-files nil)
+(save-place-mode 1)
+
+
+;; Enable narrow-to-region mode. It hides the lines which are not in a region
+(put 'narrow-to-region 'disabled nil)
+
+;; Use visible feedback and not the system bell
+(setq visible-bell t)
