@@ -162,3 +162,33 @@
 ;; http://www.flycheck.org/en/latest/
 ;; install syntax checking tools like 'npm install eslint' for JavaScript
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+;;
+;; ORG MODE
+;; Add automatic line breaks to make text look nice in org-mode
+(setq org-directory "~/Documents/org/")
+(setq org-agenda-files (quote ("~/Documents/org/todo.org")))
+(add-hook 'org-mode-hook 'auto-fill-mode)
+;;(global-set-key (kbd "C-l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+;;(global-set-key (kbd "C-c") 'org-capture)
+;;(global-set-key (kbd "C-b") 'org-switchb)
+;; Configuring TODO states. These can be configured at the top of a file too.
+(setq org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+;; Set priorities
+(setq org-highest-priority ?A)
+(setq org-lowest-priority ?C)
+(setq org-default-priority ?B)
+;; Set colors for priorities
+(setq org-priority-faces '((?A . (:foreground "#D2222D" :weight bold))
+			   (?B . (:foreground "#FFBF00"))
+			   (?C . (:foreground "#238823"))))
+;; Open agande in the current window
+(setq org-agenda-window-setup (quote current-window))
+;; Capture todo items using C-c c t
+(define-key global-map (kbd "C-c c") 'org-capture)
+(setq org-capture-templates
+      '(("t" "todo" entry (file+headline "~/Documents/org/todo.org" "Todos")
+	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
