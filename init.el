@@ -1,3 +1,6 @@
+;;; init.el --- Initialization file for Emacs
+;;; Commentary: Emacs Startup File --- initialization for Emacs
+
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
@@ -214,4 +217,9 @@
 ;; Set priority faces
 (setq org-priority-faces '((?A . (:foreground "#C2222D" :weight bold))
 			   (?B . (:foreground "#FFBF00"))
-			   (?C . (:foreground "#238823"))))
+			   (?C . (:foreground "#"))))
+
+;; Set tag alignment for org-mode and hook to run alignment after typing a tag
+(setq org-tags-column (- 14 (window-body-width)))
+;;(add-hook 'post-self-insert-hook 'org-align-all-tags)
+
