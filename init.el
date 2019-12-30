@@ -168,27 +168,50 @@
 ;; ORG MODE
 ;; Add automatic line breaks to make text look nice in org-mode
 (setq org-directory "~/Documents/org/")
-(setq org-agenda-files (quote ("~/Documents/org/todo.org")))
+
+;; Setup all the files to be used
+(setq org-agenda-files (list "~/Documents/org/todo.org"
+			     "~/Documents/org/notes.org"))
+
+;; "M-x notes" to quickly open notes
+(defun notes()
+  (interactive)
+  (find-file "~/Documents/org/notes.org"))
+
+;; Adds a timestamp when a todo is marked as DONE
+(setq org-log-done t)
+
 (add-hook 'org-mode-hook 'auto-fill-mode)
-;;(global-set-key (kbd "C-l") 'org-store-link)
+
+;; Store link with "C-c l". Paste it with "C-c C-l"
+(global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-;;(global-set-key (kbd "C-c") 'org-capture)
+;; Capture todo template (Create a todo: "C-c c t")
+(define-key global-map (kbd "C-c c") 'org-capture)
 ;;(global-set-key (kbd "C-b") 'org-switchb)
+
+;; Open agande in the current window
+(setq org-agenda-window-setup (quote current-window))
+
+(setq org-capture-templates
+      '(("t" "todo" entry (file+headline "~/Documents/org/todo.org" "Todos")
+	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
+
+
 ;; Configuring TODO states. These can be configured at the top of a file too.
 (setq org-todo-keywords
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+;; Set faces for todos
+(setq org-todo-keyword-faces '(("TODO" . (:foreground "#C2222D" :weight bold))
+		      ("IN-PROGRESS" . (:foreground "#FFBF00" :weight bold))
+		      ("WAITING" . (:foreground "#DE8ED5" :weight bold))
+		      ("DONE" . (:foreground "#73D115" :weight bold))))
+
 ;; Set priorities
 (setq org-highest-priority ?A)
 (setq org-lowest-priority ?C)
 (setq org-default-priority ?B)
-;; Set colors for priorities
-(setq org-priority-faces '((?A . (:foreground "#D2222D" :weight bold))
+;; Set priority faces
+(setq org-priority-faces '((?A . (:foreground "#C2222D" :weight bold))
 			   (?B . (:foreground "#FFBF00"))
 			   (?C . (:foreground "#238823"))))
-;; Open agande in the current window
-(setq org-agenda-window-setup (quote current-window))
-;; Capture todo items using C-c c t
-(define-key global-map (kbd "C-c c") 'org-capture)
-(setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/Documents/org/todo.org" "Todos")
-	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
