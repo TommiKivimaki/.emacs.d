@@ -1,7 +1,6 @@
-#+TITLE: Emacs configuration
+#+TITLE: Emacs literate configuration
 #+AUTHOR: Tommi Kivimäki
 
-* Emacs literate configuration
 
 ** Configure package repos
 
