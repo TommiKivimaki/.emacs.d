@@ -87,6 +87,8 @@
 
 (setq inhibit-startup-screen t)
 
+(add-hook 'markdown-mode-hook 'visual-line-mode)
+
 (put 'dired-find-alternate-file 'disabled nil)
 
 (setq dired-recursive-copies 'always)

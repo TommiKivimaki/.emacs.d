@@ -167,6 +167,13 @@ Get rid of start-up screen
 #+END_SRC
 
 
+** Markdown mode
+Enable visual line mode
+#+BEGIN_SRC emacs-lisp
+(add-hook 'markdown-mode-hook 'visual-line-mode)
+#+END_SRC
+
+
 ** dired-mode
 Use 'a' to visit a directory without creating a new buffer
 #+BEGIN_SRC emacs-lisp
