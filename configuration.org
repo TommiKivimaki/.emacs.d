@@ -175,6 +175,7 @@ Enable visual line mode
 
 
 ** dired-mode
+[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html#Dired][Dired]]
 Use 'a' to visit a directory without creating a new buffer
 #+BEGIN_SRC emacs-lisp
 (put 'dired-find-alternate-file 'disabled nil)
