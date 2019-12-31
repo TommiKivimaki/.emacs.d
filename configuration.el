@@ -108,14 +108,20 @@
 
 (setq org-directory "~/Documents/org/")
 
-;; Setup all the files to be used
+;; Setup all the agenda files
 (setq org-agenda-files (list "~/Documents/org/todo.org"
-			     "~/Documents/org/notes.org"))
+			     "~/Documents/org/notes.org"
+			     "~/Documents/org/projects.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
   (interactive)
   (find-file "~/Documents/org/notes.org"))
+
+;; "M-x projects" to quickly open projects
+(defun projects()
+  (interactive)
+  (find-file "~/Documents/org/projects.org"))
 
 ;; Adds a timestamp when a todo is marked as DONE
 (setq org-log-done t)
@@ -155,7 +161,8 @@
 			   (?B . (:foreground "#FFBF00"))
 			   (?C . (:foreground "#"))))
 
-;; Set tag alignment for org-mode and hook to run alignment after typing a tag
+;; Set tag alignment for org-mode and org-agenda-mode 
 (setq org-tags-column (- 14 (window-body-width)))
-;; (add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)
-(add-hook 'org-insert-heading-hook 'org-align-all-tags)
+(setq org-agenda-tags-column (- 14 (window-body-width)))
+;; Align tags with "C-c C-c"
+;;(add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)

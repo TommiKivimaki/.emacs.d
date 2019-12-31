@@ -13,6 +13,7 @@
 #+END_SRC
 
 
+
 ** Packages to be installed
 
 #+BEGIN_SRC emacs-lisp
@@ -36,11 +37,13 @@ Installing packages
 #+END_SRC
 
 
+
 ** Setting a theme
 
 #+BEGIN_SRC emacs-lisp
 (load-theme 'tango-dark)
 #+END_SRC
+
 
 
 ** Configuring the window
@@ -112,6 +115,7 @@ Use visual bell instead of audio bell
 #+END_SRC
 
 
+
 ** Beacon (part of window config)
 [[https://github.com/Malabarba/beacon][Beacon]]
 Visual cursor position when scrolling and jumping
@@ -119,6 +123,7 @@ Visual cursor position when scrolling and jumping
 (beacon-mode 1)
 (setq beacon-blink-duration 0.8)
 #+END_SRC
+
 
 
 ** Emacs system configuration
@@ -167,11 +172,13 @@ Get rid of start-up screen
 #+END_SRC
 
 
+
 ** Markdown mode
 Enable visual line mode
 #+BEGIN_SRC emacs-lisp
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 #+END_SRC
+
 
 
 ** dired-mode
@@ -201,6 +208,7 @@ dired-narrow starts fussy search with "/"
 #+END_SRC
 
 
+
 ** Which-key
 [[https://github.com/justbur/emacs-which-key][Which key]]
 Minor mode displaying key bindings. Enter a shortcut and wait 1 second
@@ -214,6 +222,7 @@ to see available options
 #+END_SRC
 
 
+
 ** Flycheck
 [[http://www.flycheck.org/en/latest/][Flycheck]]
 Syntax highlighting. Requires installing local linters e.g 'npm
@@ -223,19 +232,26 @@ install eslint'
 #+END_SRC
 
 
+
 ** Org-mode
 [[https://orgmode.org/worg/doc.html][Orgmode]]
 #+BEGIN_SRC emacs-lisp
 (setq org-directory "~/Documents/org/")
 
-;; Setup all the files to be used
+;; Setup all the agenda files
 (setq org-agenda-files (list "~/Documents/org/todo.org"
-			     "~/Documents/org/notes.org"))
+			     "~/Documents/org/notes.org"
+			     "~/Documents/org/projects.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
   (interactive)
   (find-file "~/Documents/org/notes.org"))
+
+;; "M-x projects" to quickly open projects
+(defun projects()
+  (interactive)
+  (find-file "~/Documents/org/projects.org"))
 
 ;; Adds a timestamp when a todo is marked as DONE
 (setq org-log-done t)
@@ -275,8 +291,10 @@ install eslint'
 			   (?B . (:foreground "#FFBF00"))
 			   (?C . (:foreground "#"))))
 
-;; Set tag alignment for org-mode and hook to run alignment after typing a tag
+;; Set tag alignment for org-mode and org-agenda-mode 
 (setq org-tags-column (- 14 (window-body-width)))
-;; (add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)
-(add-hook 'org-insert-heading-hook 'org-align-all-tags)
+(setq org-agenda-tags-column (- 14 (window-body-width)))
+;; Align tags with "C-c C-c"
+;;(add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)
 #+END_SRC
+
