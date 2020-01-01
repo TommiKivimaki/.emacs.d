@@ -22,7 +22,8 @@
 		      magit
 		      markdown-mode
 		      swift-mode
-		      which-key))
+		      web-mode
+          which-key))
 #+END_SRC
 
 Installing packages
@@ -290,10 +291,71 @@ install eslint'
 			   (?B . (:foreground "#FFBF00"))
 			   (?C . (:foreground "#"))))
 
-;; Set tag alignment for org-mode and org-agenda-mode 
+;; Set tag alignment for org-mode and org-agenda-mode
 (setq org-tags-column (- 14 (window-body-width)))
 (setq org-agenda-tags-column (- 14 (window-body-width)))
 ;; Align tags with "C-c C-c"
 ;;(add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)
 #+END_SRC
 
+
+* Programming
+
+** General
+
+*** Tabs
+
+#+BEGIN_SRC emacs-lisp
+;; Tab width to 2
+(setq-default tab-width 2)
+;; Use spaces instead of a tab
+(setq-default tab-width 2 indent-tabs-mode nil)
+;; Indentation cannot insert tabs
+(setq-default indent-tabs-mode nil)
+#+END_SRC
+
+Set CSS indent in html-mode
+#+BEGIN_SRC emacs-lisp
+(setq css-indent-offset 2)
+#+END_SRC
+
+Delete trailing whitespace when saving in all modes except
+markdown-mode
+#+BEGIN_SRC emacs-lisp
+(add-hook 'before-save-hook '(lambda()
+  (when (not (or (derived-mode-p 'markdown-mode)))
+    (delete-trailing-whitespace))))
+#+END_SRC
+
+Enable code folding for programming modes
+#+BEGIN_SRC emacs-lisp
+(defun enable-code-folding ()
+  (hs-minor-mode)
+  (local-set-key (kbd "C-z C-f") 'hs-hide-all)
+  (local-set-key (kbd "C-z C-u") 'hs-show-all)
+  (local-set-key (kbd "C-z C-b C-f") 'hs-hide-block)
+  (local-set-key (kbd "C-z C-b C-u") 'hs-show-block))
+
+(add-hook 'prog-mode-hook 'enable-code-folding)
+#+END_SRC
+
+
+** web-mode
+Web-mode is a nice mode for editing HTML, CSS & JavaScript.
+[[http://web-mode.org][Web-mode]]
+#+BEGIN_SRC emacs-lisp
+(defun web-mode-config ()
+  ;; HTML indent
+  (setq web-mode-markup-indent-offset 2)
+  ;; CSS indent
+  (setq web-mode-css-indent-offset 2)
+  ;; Highlight current HTML element
+  (setq web-mode-enable-current-element-highlight t)
+  ;; Current column highlight
+  (setq web-mode-enable-current-column-highlight t)
+  ;; Enable auto pairing
+  (setq web-mode-enable-auto-pairing t)
+)
+
+(add-hook 'web-mode-hook 'web-mode-config)
+#+END_SRC
