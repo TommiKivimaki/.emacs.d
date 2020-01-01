@@ -185,8 +185,8 @@
   (hs-minor-mode)
   (local-set-key (kbd "C-z C-f") 'hs-hide-all)
   (local-set-key (kbd "C-z C-u") 'hs-show-all)
-  (local-set-key (kbd "C-z b C-f") 'hs-hide-block)
-  (local-set-key (kbd "C-z b C-u") 'hs-show-block))
+  (local-set-key (kbd "C-z C-b C-f") 'hs-hide-block)
+  (local-set-key (kbd "C-z C-b C-u") 'hs-show-block))
 
 (add-hook 'prog-mode-hook 'enable-code-folding)
 
