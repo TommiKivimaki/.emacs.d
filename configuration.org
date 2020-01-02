@@ -23,7 +23,8 @@
 		      markdown-mode
 		      swift-mode
 		      web-mode
-          which-key))
+          which-key
+          yaml-mode))
 #+END_SRC
 
 Installing packages
@@ -358,4 +359,11 @@ Web-mode is a nice mode for editing HTML, CSS & JavaScript.
 )
 
 (add-hook 'web-mode-hook 'web-mode-config)
+#+END_SRC
+
+** YAML
+Set mode to yaml-mode when opening .yml file.
+#+BEGIN_SRC emacs-lisp
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 #+END_SRC

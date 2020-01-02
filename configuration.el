@@ -10,7 +10,8 @@
 		      markdown-mode
 		      swift-mode
 		      web-mode
-          which-key))
+          which-key
+          yaml-mode))
 
 (dolist (p my-packages)
   (unless (package-installed-p p)
@@ -204,3 +205,6 @@
 )
 
 (add-hook 'web-mode-hook 'web-mode-config)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
