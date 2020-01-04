@@ -315,9 +315,32 @@ install eslint'
 (setq-default indent-tabs-mode nil)
 #+END_SRC
 
+JS indent level
+#+BEGIN_SRC emacs-lisp
+(setq js-indent-level 2)
+#+END_SRC
+
+Python indent level
+#+BEGIN_SRC emacs-lisp
+(setq python-indent 2)
+#+END_SRC
+
 Set CSS indent in html-mode
 #+BEGIN_SRC emacs-lisp
 (setq css-indent-offset 2)
+#+END_SRC
+
+Shell script indent
+#+BEGIN_SRC emacs-lisp
+(add-hook 'sh-mode-hook
+          (lambda ()
+            (setq sh-basic-offset 2
+                  sh-indentation 2)))
+#+END_SRC
+
+Web-mode
+#+BEGIN_SRC emacs-lisp
+(setq web-mode-markup-indent-offset 2)
 #+END_SRC
 
 Delete trailing whitespace when saving in all modes except

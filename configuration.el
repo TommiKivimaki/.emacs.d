@@ -176,7 +176,18 @@
 ;; Indentation cannot insert tabs
 (setq-default indent-tabs-mode nil)
 
+(setq js-indent-level 2)
+
+(setq python-indent 2)
+
 (setq css-indent-offset 2)
+
+(add-hook 'sh-mode-hook
+          (lambda ()
+            (setq sh-basic-offset 2
+                  sh-indentation 2)))
+
+(setq web-mode-markup-indent-offset 2)
 
 (add-hook 'before-save-hook '(lambda()
   (when (not (or (derived-mode-p 'markdown-mode)))
