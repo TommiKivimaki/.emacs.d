@@ -8,6 +8,7 @@
 		      flycheck
 		      magit
 		      markdown-mode
+          restclient
 		      swift-mode
 		      web-mode
           which-key
@@ -216,6 +217,9 @@
 )
 
 (add-hook 'web-mode-hook 'web-mode-config)
+
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

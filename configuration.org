@@ -21,6 +21,7 @@
 		      flycheck
 		      magit
 		      markdown-mode
+          restclient
 		      swift-mode
 		      web-mode
           which-key
@@ -300,7 +301,13 @@ install eslint'
 #+END_SRC
 
 
+** REST Client
+[[https://github.com/pashky/restclient.el][Restclient]]
+
+
+
 * Programming
+
 
 ** General
 
@@ -383,6 +390,13 @@ Web-mode is a nice mode for editing HTML, CSS & JavaScript.
 
 (add-hook 'web-mode-hook 'web-mode-config)
 #+END_SRC
+
+Switch to web-mode automatically to edit these files
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+#+END_SRC
+
 
 ** YAML
 Set mode to yaml-mode when opening .yml file.
