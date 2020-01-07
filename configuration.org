@@ -174,7 +174,22 @@ Get rid of start-up screen
 (setq inhibit-startup-screen t)
 #+END_SRC
 
+Open a nicer looking buffer list in other window
+#+BEGIN_SRC emacs-lisp
+(defalias 'list-buffers 'ibuffer-other-window)
+#+END_SRC
 
+Ido mode to show command completions everywhere
+#+BEGIN_SRC emacs-lisp
+(ido-mode t)
+(ido-everywhere t)
+(setq ido-enable-flex-matching t)
+#+END_SRC
+
+Use SHIFT + arrow keys to move between windows
+#+BEGIN_SRC emacs-lisp
+(windmove-default-keybindings)
+#+END_SRC
 
 ** Markdown mode
 Enable visual line mode

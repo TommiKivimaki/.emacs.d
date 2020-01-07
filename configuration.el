@@ -91,6 +91,12 @@
 
 (setq inhibit-startup-screen t)
 
+(defalias 'list-buffers 'ibuffer-other-window)
+
+(ido-mode t)
+(ido-everywhere t)
+(setq ido-enable-flex-matching t)
+
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 
 (put 'dired-find-alternate-file 'disabled nil)
