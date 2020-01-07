@@ -8,6 +8,7 @@
 		      flycheck
 		      magit
 		      markdown-mode
+          org-bullets
           restclient
 		      swift-mode
 		      web-mode
@@ -125,6 +126,11 @@
 (defun projects()
   (interactive)
   (find-file "~/Documents/org/projects.org"))
+
+;; Starts to bullets
+(add-hook 'org-mode-hook (
+   lambda()
+     (org-bullets-mode 1)))
 
 ;; Adds a timestamp when a todo is marked as DONE
 (setq org-log-done t)
