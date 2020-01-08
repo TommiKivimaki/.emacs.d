@@ -6,6 +6,7 @@
 (defvar my-packages '(beacon
 		      dired-narrow
 		      flycheck
+          js2-mode
 		      magit
 		      markdown-mode
           org-bullets
@@ -239,3 +240,8 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq js2-highlight-level 3)
+;; Do not warn about missing semicolons
+(setq js2-strict-missing-semi-warning nil)
