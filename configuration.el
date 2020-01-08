@@ -184,6 +184,12 @@
 (setq org-agenda-tags-column (- 14 (window-body-width)))
 ;; Align tags with "C-c C-c"
 ;;(add-hook 'org-ctrl-c-ctrl-c-hook 'org-align-all-tags)
+;; Enable shift+arrow key to switch between windows if cursor is not in a special
+;; place inside org window
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
 
 ;; Tab width to 2
 (setq-default tab-width 2)
