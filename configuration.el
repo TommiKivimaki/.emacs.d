@@ -97,6 +97,8 @@
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
 
+(windmove-default-keybindings)
+
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 
 (put 'dired-find-alternate-file 'disabled nil)
@@ -220,6 +222,8 @@
   (setq web-mode-markup-indent-offset 2)
   ;; CSS indent
   (setq web-mode-css-indent-offset 2)
+  ;; JS indent
+  (setq web-mode-script-padding 2)
   ;; Highlight current HTML element
   (setq web-mode-enable-current-element-highlight t)
   ;; Current column highlight

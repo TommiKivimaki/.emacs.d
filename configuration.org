@@ -1,6 +1,9 @@
+#+STARTUP: content
 #+TITLE: Emacs literate configuration
 #+AUTHOR: Tommi Kivimäki
 
+
+* Basics
 
 ** Configure package repos
 
@@ -190,6 +193,9 @@ Use SHIFT + arrow keys to move between windows
 #+BEGIN_SRC emacs-lisp
 (windmove-default-keybindings)
 #+END_SRC
+
+
+* Modes
 
 ** Markdown mode
 Enable visual line mode
@@ -400,6 +406,8 @@ Web-mode is a nice mode for editing HTML, CSS & JavaScript.
   (setq web-mode-markup-indent-offset 2)
   ;; CSS indent
   (setq web-mode-css-indent-offset 2)
+  ;; JS indent
+  (setq web-mode-script-padding 2)
   ;; Highlight current HTML element
   (setq web-mode-enable-current-element-highlight t)
   ;; Current column highlight
