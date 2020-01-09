@@ -10,6 +10,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          pdf-tools
           restclient
 		      swift-mode
 		      web-mode

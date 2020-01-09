@@ -26,11 +26,18 @@
 		      magit
 		      markdown-mode
           org-bullets
+          pdf-tools
           restclient
 		      swift-mode
 		      web-mode
           which-key
           yaml-mode))
+
+;; To get pdf-tools installed
+;;; pdf-tools installed first via homebrew
+;;; brew install --HEAD dunn/homebrew-emacs/pdf-tools
+;;; Then mactex installed
+;;; brew cask install mactex
 #+END_SRC
 
 Installing packages
