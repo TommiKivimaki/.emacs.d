@@ -22,6 +22,7 @@
 (defvar my-packages '(beacon
 		      dired-narrow
 		      flycheck
+          ido-vertical-mode
           js2-mode
 		      magit
 		      markdown-mode
@@ -204,6 +205,13 @@ Use SHIFT + arrow keys to move between windows
 
 
 * Modes
+
+** ido-vertical-mode
+#+BEGIN_SRC emacs-lisp
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-show-count t)
+#+END_SRC
 
 ** Markdown mode
 Enable visual line mode

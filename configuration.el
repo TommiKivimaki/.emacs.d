@@ -6,6 +6,7 @@
 (defvar my-packages '(beacon
 		      dired-narrow
 		      flycheck
+          ido-vertical-mode
           js2-mode
 		      magit
 		      markdown-mode
@@ -16,6 +17,12 @@
 		      web-mode
           which-key
           yaml-mode))
+
+;; To get pdf-tools installed
+;;; pdf-tools installed first via homebrew
+;;; brew install --HEAD dunn/homebrew-emacs/pdf-tools
+;;; Then mactex installed
+;;; brew cask install mactex
 
 (dolist (p my-packages)
   (unless (package-installed-p p)
@@ -100,6 +107,10 @@
 (setq ido-enable-flex-matching t)
 
 (windmove-default-keybindings)
+
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-show-count t)
 
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 
