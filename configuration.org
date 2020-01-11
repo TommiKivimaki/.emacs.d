@@ -213,6 +213,7 @@ Use SHIFT + arrow keys to move between windows
 (setq ido-vertical-show-count t)
 #+END_SRC
 
+
 ** Markdown mode
 Enable visual line mode
 #+BEGIN_SRC emacs-lisp
