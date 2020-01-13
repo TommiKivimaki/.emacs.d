@@ -1,7 +1,7 @@
 #+STARTUP: content
 #+TITLE: Emacs literate configuration
 #+AUTHOR: Tommi Kivimäki
-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 * Basics
 
@@ -21,6 +21,7 @@
 #+BEGIN_SRC emacs-lisp
 (defvar my-packages '(beacon
 		      dired-narrow
+          htmlize
 		      flycheck
           ido-vertical-mode
           js2-mode

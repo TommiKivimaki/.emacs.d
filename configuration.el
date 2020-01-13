@@ -5,6 +5,7 @@
 
 (defvar my-packages '(beacon
 		      dired-narrow
+          htmlize
 		      flycheck
           ido-vertical-mode
           js2-mode
@@ -102,11 +103,11 @@
 
 (defalias 'list-buffers 'ibuffer-other-window)
 
+(windmove-default-keybindings)
+
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
-
-(windmove-default-keybindings)
 
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
