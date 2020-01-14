@@ -105,6 +105,11 @@
 
 (windmove-default-keybindings)
 
+(org-babel-do-load-languages 'org-babel-load-languages
+  '(
+    (shell . t)
+))
+
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
