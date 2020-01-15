@@ -12,6 +12,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-gfm
           pdf-tools
           restclient
 		      swift-mode
@@ -105,10 +106,14 @@
 
 (windmove-default-keybindings)
 
-(org-babel-do-load-languages 'org-babel-load-languages
-  '(
-    (shell . t)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (shell . t)
 ))
+
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
 
 (ido-mode t)
 (ido-everywhere t)

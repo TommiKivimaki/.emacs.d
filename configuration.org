@@ -201,10 +201,17 @@ Use SHIFT + arrow keys to move between windows
 
 Enable org-babel support for these languages
 #+BEGIN_SRC emacs-lisp
-(org-babel-do-load-languages 'org-babel-load-languages
-  '(
-    (shell . t)
-))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (shell . t)
+  ))
+#+END_SRC
+
+Enabling ox-gfm markdown export from org-mode
+#+BEGIN_SRC emacs-lisp
+  (eval-after-load "org"
+    '(require 'ox-gfm nil t))
 #+END_SRC
 
 * Modes
