@@ -194,6 +194,14 @@ Open a nicer looking buffer list in other window
 (defalias 'list-buffers 'ibuffer-other-window)
 #+END_SRC
 
+Helper function to delete all the buffers except the current one
+#+BEGIN_SRC emacs-lisp
+  (defun kill-other-buffers ()
+    "Kill all other buffers, but not the current one"
+    (interactive)
+    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+#+END_SRC
+
 Use SHIFT + arrow keys to move between windows
 #+BEGIN_SRC emacs-lisp
 (windmove-default-keybindings)

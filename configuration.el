@@ -104,6 +104,11 @@
 
 (defalias 'list-buffers 'ibuffer-other-window)
 
+(defun kill-other-buffers ()
+  "Kill all other buffers, but not the current one"
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
 (windmove-default-keybindings)
 
 (org-babel-do-load-languages
