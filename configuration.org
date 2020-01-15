@@ -29,6 +29,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-gfm
           pdf-tools
           restclient
 		      swift-mode
