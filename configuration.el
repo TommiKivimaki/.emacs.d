@@ -108,6 +108,8 @@
 (org-babel-do-load-languages 'org-babel-load-languages
   '(
     (shell . t)
+    (emacs-lisp . t)
+    (js . t)
 ))
 
 (ido-mode t)
