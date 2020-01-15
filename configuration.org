@@ -29,6 +29,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-gfm
           pdf-tools
           restclient
 		      swift-mode
@@ -193,6 +194,14 @@ Open a nicer looking buffer list in other window
 (defalias 'list-buffers 'ibuffer-other-window)
 #+END_SRC
 
+Helper function to delete all the buffers except the current one
+#+BEGIN_SRC emacs-lisp
+  (defun kill-other-buffers ()
+    "Kill all other buffers, but not the current one"
+    (interactive)
+    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+#+END_SRC
+
 Use SHIFT + arrow keys to move between windows
 #+BEGIN_SRC emacs-lisp
 (windmove-default-keybindings)
@@ -206,6 +215,17 @@ Enable org-babel support for these languages
       (emacs-lisp . t)
       (js . t)
   ))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (shell . t)
+  ))
+#+END_SRC
+
+Enabling ox-gfm markdown export from org-mode
+#+BEGIN_SRC emacs-lisp
+  (eval-after-load "org"
+    '(require 'ox-gfm nil t))
 #+END_SRC
 
 * Modes

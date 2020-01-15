@@ -12,6 +12,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-gfm
           pdf-tools
           restclient
 		      swift-mode
@@ -103,14 +104,29 @@
 
 (defalias 'list-buffers 'ibuffer-other-window)
 
+(defun kill-other-buffers ()
+  "Kill all other buffers, but not the current one"
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
 (windmove-default-keybindings)
 
+<<<<<<< HEAD
 (org-babel-do-load-languages 'org-babel-load-languages
   '(
     (shell . t)
     (emacs-lisp . t)
     (js . t)
+=======
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (shell . t)
+>>>>>>> 36fb7b9ec0c8b0a2f241452fd584493f431cee98
 ))
+
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
 
 (ido-mode t)
 (ido-everywhere t)
