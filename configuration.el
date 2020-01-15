@@ -4,6 +4,7 @@
 			 ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 (defvar my-packages '(beacon
+          company
 		      dired-narrow
           htmlize
 		      flycheck
@@ -220,6 +221,13 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+(add-hook 'after-init-hook 'global-company-mode)
+;; No delay in showing suggestions.
+(setq company-idle-delay 0)
+;; Show suggestions after entering 2 character2.
+(setq company-minimum-prefix-length 2)
+(setq company-selection-wrap-around t)
 
 ;; Tab width to 2
 (setq-default tab-width 2)

@@ -1,4 +1,4 @@
-#+STARTUP: content
+#+STARTUP: overview
 #+TITLE: Emacs literate configuration
 #+AUTHOR: Tommi Kivimäki
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
@@ -21,6 +21,7 @@
 
 #+BEGIN_SRC emacs-lisp
 (defvar my-packages '(beacon
+          company
 		      dired-narrow
           htmlize
 		      flycheck
@@ -144,7 +145,7 @@ Visual cursor position when scrolling and jumping
 
 
 
-** Emacs system configuration
+** Emacs system configurationo
 Set garbage collection to 20MB instead of 0.76MB default.
 Speeds up certain operations
 
@@ -223,6 +224,12 @@ Enabling ox-gfm markdown export from org-mode
   (eval-after-load "org"
     '(require 'ox-gfm nil t))
 #+END_SRC
+
+Enable typing y or n instead of yes and no
+#+BEGIN_SRC emacs-lisp
+  (fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
 
 * Modes
 
@@ -382,6 +389,21 @@ install eslint'
 ** REST Client
 [[https://github.com/pashky/restclient.el][Restclient]]
 
+
+
+** Company
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'after-init-hook 'global-company-mode)
+;; No delay in showing suggestions.
+(setq company-idle-delay 0)
+;; Show suggestions after entering 2 character2.
+(setq company-minimum-prefix-length 2)
+(setq company-selection-wrap-around t)
+; Use tab key to cycle through suggestions.
+; ('tng' means 'tab and go')
+(company-tng-configure-default)
+#+END_SRC
 
 
 * Programming
