@@ -111,18 +111,12 @@
 
 (windmove-default-keybindings)
 
-<<<<<<< HEAD
-(org-babel-do-load-languages 'org-babel-load-languages
-  '(
-    (shell . t)
-    (emacs-lisp . t)
-    (js . t)
-=======
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
    (shell . t)
->>>>>>> 36fb7b9ec0c8b0a2f241452fd584493f431cee98
+    (emacs-lisp . t)
+    (js . t)
 ))
 
 (eval-after-load "org"
