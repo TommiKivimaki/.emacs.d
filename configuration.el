@@ -6,6 +6,7 @@
 (defvar my-packages '(beacon
           company
 		      dired-narrow
+          dockerfile-mode
           htmlize
 		      flycheck
           ido-vertical-mode
@@ -123,6 +124,8 @@
 (eval-after-load "org"
   '(require 'ox-gfm nil t))
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -228,6 +231,11 @@
 ;; Show suggestions after entering 2 character2.
 (setq company-minimum-prefix-length 2)
 (setq company-selection-wrap-around t)
+; Use tab key to cycle through suggestions.
+; ('tng' means 'tab and go')
+(company-tng-configure-default)
+
+(add-to-list 'auto-mode-alist '("\\Dockerfile\\'" . dockerfile-mode))
 
 ;; Tab width to 2
 (setq-default tab-width 2)

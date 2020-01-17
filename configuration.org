@@ -23,6 +23,7 @@
 (defvar my-packages '(beacon
           company
 		      dired-narrow
+          dockerfile-mode
           htmlize
 		      flycheck
           ido-vertical-mode
@@ -403,6 +404,13 @@ install eslint'
 ; Use tab key to cycle through suggestions.
 ; ('tng' means 'tab and go')
 (company-tng-configure-default)
+#+END_SRC
+
+** Dockerfile-mode
+[[https://github.com/spotify/dockerfile-mode/tree/d31f7685ebc5832d957e25070a930aa42984327d][GitHub]]
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 #+END_SRC
 
 
