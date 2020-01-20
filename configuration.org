@@ -331,6 +331,12 @@ install eslint'
   (interactive)
   (find-file "~/Documents/org/projects.org"))
 
+;; "M-x content" to quickly open projects
+(defun content()
+  (interactive)
+  (find-file "~/Documents/org/content.org"))
+
+
 ;; Starts to bullets
 (add-hook 'org-mode-hook (
    lambda()

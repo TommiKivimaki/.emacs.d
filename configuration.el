@@ -158,7 +158,8 @@
 ;; Setup all the agenda files
 (setq org-agenda-files (list "~/Documents/org/todo.org"
 			     "~/Documents/org/notes.org"
-			     "~/Documents/org/projects.org"))
+			     "~/Documents/org/projects.org"
+			     "~/Documents/org/content.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
