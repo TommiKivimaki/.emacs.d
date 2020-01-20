@@ -235,7 +235,7 @@
 ; ('tng' means 'tab and go')
 (company-tng-configure-default)
 
-(add-to-list 'auto-mode-alist '("\\Dockerfile\\'" . dockerfile-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 ;; Tab width to 2
 (setq-default tab-width 2)
