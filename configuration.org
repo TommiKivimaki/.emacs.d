@@ -404,7 +404,7 @@ install eslint'
 #+BEGIN_SRC emacs-lisp
 (add-hook 'after-init-hook 'global-company-mode)
 ;; No delay in showing suggestions.
-(setq company-idle-delay 0)
+(setq company-idle-delay 1)
 ;; Show suggestions after entering 2 character2.
 (setq company-minimum-prefix-length 2)
 (setq company-selection-wrap-around t)
@@ -412,6 +412,9 @@ install eslint'
 ; ('tng' means 'tab and go')
 (company-tng-configure-default)
 #+END_SRC
+
+#+RESULTS:
+: company-select-previous
 
 ** Dockerfile-mode
 [[https://github.com/spotify/dockerfile-mode/tree/d31f7685ebc5832d957e25070a930aa42984327d][GitHub]]

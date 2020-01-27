@@ -171,6 +171,12 @@
   (interactive)
   (find-file "~/Documents/org/projects.org"))
 
+;; "M-x content" to quickly open projects
+(defun content()
+  (interactive)
+  (find-file "~/Documents/org/content.org"))
+
+
 ;; Starts to bullets
 (add-hook 'org-mode-hook (
    lambda()
@@ -228,7 +234,7 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 ;; No delay in showing suggestions.
-(setq company-idle-delay 0)
+(setq company-idle-delay 1)
 ;; Show suggestions after entering 2 character2.
 (setq company-minimum-prefix-length 2)
 (setq company-selection-wrap-around t)
