@@ -153,28 +153,28 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(setq org-directory "~/Documents/org/")
+(setq org-directory "~/VersionControlled/org")
 
 ;; Setup all the agenda files
-(setq org-agenda-files (list "~/Documents/org/todo.org"
-			     "~/Documents/org/notes.org"
-			     "~/Documents/org/projects.org"
-			     "~/Documents/org/content.org"))
+(setq org-agenda-files (list "~/VersionControlled/org/todo.org"
+			     "~/VersionControlled/org/notes.org"
+			     "~/VersionControlled/org/projects.org"
+			     "~/VersionControlled/org/content.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
   (interactive)
-  (find-file "~/Documents/org/notes.org"))
+  (find-file "~/VersionControlled/org/notes.org"))
 
 ;; "M-x projects" to quickly open projects
 (defun projects()
   (interactive)
-  (find-file "~/Documents/org/projects.org"))
+  (find-file "~/VersionControlled/org/projects.org"))
 
 ;; "M-x content" to quickly open projects
 (defun content()
   (interactive)
-  (find-file "~/Documents/org/content.org"))
+  (find-file "~/VersionControlled/org/content.org"))
 
 
 ;; Starts to bullets
@@ -198,7 +198,7 @@
 (setq org-agenda-window-setup (quote current-window))
 
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/Documents/org/todo.org" "Todos")
+      '(("t" "todo" entry (file+headline "~/VersionControlled/org/todo.org" "Todos")
 	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
 
 
