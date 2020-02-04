@@ -8,6 +8,7 @@
 		      dired-narrow
           dockerfile-mode
           htmlize
+          epresent
 		      flycheck
           ido-vertical-mode
           js2-mode

@@ -25,6 +25,7 @@
 		      dired-narrow
           dockerfile-mode
           htmlize
+          epresent
 		      flycheck
           ido-vertical-mode
           js2-mode
@@ -392,10 +393,6 @@ install eslint'
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
 #+END_SRC
-
-#+RESULTS:
-| windmove-right |
-
 
 ** REST Client
 [[https://github.com/pashky/restclient.el][Restclient]]
