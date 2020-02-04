@@ -396,12 +396,17 @@ install eslint'
 #+END_SRC
 
 ** ox-reveal
-   Using CDN or a local clone
+   Configuration options are set in #+REVEAL_INIT_OPTIONS on top of
+   the document. All the available variables are documented in [[https://github.com/hakimel/reveal.js#configuration][Reveal.js repo]]
+   The configuration defaults to a local clone instead of a CDN.
 #+BEGIN_SRC emacs-lisp
   (load-library "ox-reveal")
   ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
   (setq org-reveal-root "file:///Users/tommi/Documents/reveal.js")
+  ;; Disable automatic title slide generation
+  (setq org-reveal-title-slide nil)
 #+END_SRC
+
 ** REST Client
 [[https://github.com/pashky/restclient.el][Restclient]]
 
