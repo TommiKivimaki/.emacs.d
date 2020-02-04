@@ -15,6 +15,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-reveal
           ox-gfm
           pdf-tools
           restclient
@@ -232,6 +233,10 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+(load-library "ox-reveal")
+;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+(setq org-reveal-root "file:///Users/tommi/Documents/reveal.js")
 
 (add-hook 'after-init-hook 'global-company-mode)
 ;; No delay in showing suggestions.

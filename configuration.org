@@ -32,6 +32,7 @@
 		      magit
 		      markdown-mode
           org-bullets
+          ox-reveal
           ox-gfm
           pdf-tools
           restclient
@@ -394,6 +395,13 @@ install eslint'
 (add-hook 'org-shiftright-final-hook 'windmove-right)
 #+END_SRC
 
+** ox-reveal
+   Using CDN or a local clone
+#+BEGIN_SRC emacs-lisp
+  (load-library "ox-reveal")
+  ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+  (setq org-reveal-root "file:///Users/tommi/Documents/reveal.js")
+#+END_SRC
 ** REST Client
 [[https://github.com/pashky/restclient.el][Restclient]]
 
