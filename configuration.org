@@ -193,10 +193,51 @@ Get rid of start-up screen
 (setq inhibit-startup-screen t)
 #+END_SRC
 
-Open a nicer looking buffer list in other window
+
+iBuffer configuration. CC mode is not installed and it's missing here
+too.
+Shortcut is C-x C-b
 #+BEGIN_SRC emacs-lisp
-(defalias 'list-buffers 'ibuffer-other-window)
+  (defalias 'list-buffers 'ibuffer-other-window)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Define a filter group
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("dired" (mode . dired-mode))
+                 ("org" (name . "^.*org$"))
+                 ("Magit" (name . "\*magit"))
+                 ("web" (or
+                 (mode . web-mode)
+                 (mode . js2-mode)
+                 (mode . css-mode)))
+                 ("shell" (or
+                 (mode . eshell-mode)
+                 (mode . shell-mode)))
+                 ("programming" (or
+                                 (mode . python-mode)
+                                 (mode . swift-mode)
+                                 (mode . c++-mode)))
+
+                 ("emacs" (or
+                           (name . "^\\*scratch\\*$")
+                           (name . "^\\*Messages\\*$")))
+                 ))))
+
+  (add-hook 'ibuffer-mode-hook
+            (lambda ()
+            ;; Automatically keep buffer list updated
+            (ibuffer-auto-mode 1)
+            ;; Load the defined filter group
+            (ibuffer-switch-to-saved-filter-groups "default")))
+
+  ;; Don't show filter groups if there are no buffers in that group
+  (setq ibuffer-show-empty-filter-groups nil)
+
+  ;; Don't ask for confirmation to delete marked buffers
+  ;; (setq ibuffer-expert t)
 #+END_SRC
+
 
 Helper function to delete all the buffers except the current one
 #+BEGIN_SRC emacs-lisp

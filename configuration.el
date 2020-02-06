@@ -107,6 +107,41 @@
 (setq inhibit-startup-screen t)
 
 (defalias 'list-buffers 'ibuffer-other-window)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Define a filter group
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("dired" (mode . dired-mode))
+                 ("org" (name . "^.*org$"))
+                 ("Magit" (name . "\*magit"))
+                 ("web" (or (mode . web-mode) (mode . js2-mode)))
+                 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+                 ("programming" (or
+                                 (mode . python-mode)
+                                 (mode . swift-mode)
+                                 (mode . cc-mode)
+                                 (mode . c++-mode)))
+
+                 ("CC" (name . "^\\.c"))
+
+                 ("emacs" (or
+                           (name . "^\\*scratch\\*$")
+                           (name . "^\\*Messages\\*$")))
+                 ))))
+
+  (add-hook 'ibuffer-mode-hook
+            (lambda ()
+            ;; Automatically keep buffer list updated
+            (ibuffer-auto-mode 1)
+            ;; Load the defined filter group
+            (ibuffer-switch-to-saved-filter-groups "default")))
+
+  ;; Don't show filter groups if there are no buffers in that group
+  (setq ibuffer-show-empty-filter-groups nil)
+
+  ;; Don't ask for confirmation to delete marked buffers
+  ;; (setq ibuffer-expert t)
 
 (defun kill-other-buffers ()
   "Kill all other buffers, but not the current one"
@@ -237,6 +272,8 @@
 (load-library "ox-reveal")
 ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
 (setq org-reveal-root "file:///Users/tommi/Documents/reveal.js")
+;; Disable automatic title slide generation
+(setq org-reveal-title-slide nil)
 
 (add-hook 'after-init-hook 'global-company-mode)
 ;; No delay in showing suggestions.
