@@ -114,16 +114,18 @@
         (quote (("default"
                  ("dired" (mode . dired-mode))
                  ("org" (name . "^.*org$"))
-                 ("Magit" (name . "\*magit"))
-                 ("web" (or (mode . web-mode) (mode . js2-mode)))
-                 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+                 ("Magit" (mode . magit-mode))
+                 ("web" (or
+                 (mode . web-mode)
+                 (mode . js2-mode)
+                 (mode . css-mode)))
+                 ("shell" (or
+                 (mode . eshell-mode)
+                 (mode . shell-mode)))
                  ("programming" (or
                                  (mode . python-mode)
                                  (mode . swift-mode)
-                                 (mode . cc-mode)
                                  (mode . c++-mode)))
-
-                 ("CC" (name . "^\\.c"))
 
                  ("emacs" (or
                            (name . "^\\*scratch\\*$")
@@ -196,7 +198,8 @@
 (setq org-agenda-files (list "~/VersionControlled/org/todo.org"
 			     "~/VersionControlled/org/notes.org"
 			     "~/VersionControlled/org/projects.org"
-			     "~/VersionControlled/org/content.org"))
+			     "~/VersionControlled/org/content.org"
+           "~/VersionControlled/org/solutive.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
