@@ -198,8 +198,7 @@
 (setq org-agenda-files (list "~/VersionControlled/org/todo.org"
 			     "~/VersionControlled/org/notes.org"
 			     "~/VersionControlled/org/projects.org"
-			     "~/VersionControlled/org/content.org"
-           "~/VersionControlled/org/solutive.org"))
+			     "~/VersionControlled/org/content.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -342,6 +341,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs?\\'" . web-mode))
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

@@ -287,7 +287,7 @@ Ido mode to show command completions everywhere
 Use ido-vertical-mode
 #+BEGIN_SRC emacs-lisp
 (ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
 (setq ido-vertical-show-count t)
 #+END_SRC
 
@@ -341,7 +341,6 @@ to see available options
 #+END_SRC
 
 
-
 ** Flycheck
 [[http://www.flycheck.org/en/latest/][Flycheck]]
 Syntax highlighting. Requires installing local linters e.g 'npm
@@ -349,7 +348,6 @@ install eslint'
 #+BEGIN_SRC emacs-lisp
 (add-hook 'after-init-hook #'global-flycheck-mode)
 #+END_SRC
-
 
 
 ** Org-mode
@@ -567,6 +565,7 @@ Switch to web-mode automatically to edit these files
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs?\\'" . web-mode))
 #+END_SRC
 
 
