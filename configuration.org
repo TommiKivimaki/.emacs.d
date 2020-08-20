@@ -59,7 +59,6 @@ Installing packages
 #+END_SRC
 
 
-
 ** Setting a theme
 
 #+BEGIN_SRC emacs-lisp
@@ -83,7 +82,7 @@ Set default window size
      (setq initial-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 95)
+	      (width . 170)
 	      (height . 92)))
      (setq default-frame-alist
 	    '(
@@ -148,7 +147,7 @@ Visual cursor position when scrolling and jumping
 
 
 
-** Emacs system configurationo
+** Emacs system configuration
 Set garbage collection to 20MB instead of 0.76MB default.
 Speeds up certain operations
 
@@ -287,7 +286,7 @@ Ido mode to show command completions everywhere
 Use ido-vertical-mode
 #+BEGIN_SRC emacs-lisp
 (ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
 (setq ido-vertical-show-count t)
 #+END_SRC
 
@@ -355,28 +354,28 @@ install eslint'
 ** Org-mode
 [[https://orgmode.org/worg/doc.html][Orgmode]]
 #+BEGIN_SRC emacs-lisp
-(setq org-directory "~/VersionControlled/org")
+(setq org-directory "/Volumes/Promise RAID/VersionControlled/org")
 
 ;; Setup all the agenda files
-(setq org-agenda-files (list "~/VersionControlled/org/todo.org"
-			     "~/VersionControlled/org/notes.org"
-			     "~/VersionControlled/org/projects.org"
-			     "~/VersionControlled/org/content.org"))
+(setq org-agenda-files (list "/Volumes/Promise RAID/VersionControlled/org/todo.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/content.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
   (interactive)
-  (find-file "~/VersionControlled/org/notes.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/notes.org"))
 
 ;; "M-x projects" to quickly open projects
-(defun projects()
+(defun proj()
   (interactive)
-  (find-file "~/VersionControlled/org/projects.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/projects.org"))
 
 ;; "M-x content" to quickly open projects
 (defun content()
   (interactive)
-  (find-file "~/VersionControlled/org/content.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/content.org"))
 
 
 ;; Starts to bullets
@@ -400,7 +399,7 @@ install eslint'
 (setq org-agenda-window-setup (quote current-window))
 
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/VersionControlled/org/todo.org" "Todos")
+      '(("t" "todo" entry (file+headline "/Volumes/Promise RAID/VersionControlled/org/todo.org" "Todos")
 	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
 
 

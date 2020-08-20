@@ -114,16 +114,18 @@
         (quote (("default"
                  ("dired" (mode . dired-mode))
                  ("org" (name . "^.*org$"))
-                 ("Magit" (name . "\*magit"))
-                 ("web" (or (mode . web-mode) (mode . js2-mode)))
-                 ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+                 ("Magit" (mode . magit-mode))
+                 ("web" (or
+                 (mode . web-mode)
+                 (mode . js2-mode)
+                 (mode . css-mode)))
+                 ("shell" (or
+                 (mode . eshell-mode)
+                 (mode . shell-mode)))
                  ("programming" (or
                                  (mode . python-mode)
                                  (mode . swift-mode)
-                                 (mode . cc-mode)
                                  (mode . c++-mode)))
-
-                 ("CC" (name . "^\\.c"))
 
                  ("emacs" (or
                            (name . "^\\*scratch\\*$")
@@ -190,28 +192,28 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(setq org-directory "~/VersionControlled/org")
+(setq org-directory "/Volumes/Promise RAID/VersionControlled/org")
 
 ;; Setup all the agenda files
-(setq org-agenda-files (list "~/VersionControlled/org/todo.org"
-			     "~/VersionControlled/org/notes.org"
-			     "~/VersionControlled/org/projects.org"
-			     "~/VersionControlled/org/content.org"))
+(setq org-agenda-files (list "/Volumes/Promise RAID/VersionControlled/org/todo.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
+			     "/Volumes/Promise RAID/VersionControlled/org/content.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
   (interactive)
-  (find-file "~/VersionControlled/org/notes.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/notes.org"))
 
 ;; "M-x projects" to quickly open projects
 (defun projects()
   (interactive)
-  (find-file "~/VersionControlled/org/projects.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/projects.org"))
 
 ;; "M-x content" to quickly open projects
 (defun content()
   (interactive)
-  (find-file "~/VersionControlled/org/content.org"))
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/content.org"))
 
 
 ;; Starts to bullets
@@ -235,7 +237,7 @@
 (setq org-agenda-window-setup (quote current-window))
 
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/VersionControlled/org/todo.org" "Todos")
+      '(("t" "todo" entry (file+headline "/Volumes/Promise RAID/VersionControlled/org/todo.org" "Todos")
 	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
 
 
