@@ -340,7 +340,6 @@ to see available options
 #+END_SRC
 
 
-
 ** Flycheck
 [[http://www.flycheck.org/en/latest/][Flycheck]]
 Syntax highlighting. Requires installing local linters e.g 'npm
@@ -348,7 +347,6 @@ install eslint'
 #+BEGIN_SRC emacs-lisp
 (add-hook 'after-init-hook #'global-flycheck-mode)
 #+END_SRC
-
 
 
 ** Org-mode
@@ -566,6 +564,7 @@ Switch to web-mode automatically to edit these files
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs?\\'" . web-mode))
 #+END_SRC
 
 
