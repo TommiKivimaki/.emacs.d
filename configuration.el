@@ -46,12 +46,12 @@
      (setq initial-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 95)
+	      (width . 170)
 	      (height . 92)))
      (setq default-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 95)
+	      (width . 170)
 	      (height . 92))))
  (progn
    (setq initial-frame-alist '((tool-bar-lines . 0)))
@@ -170,7 +170,7 @@
 (setq ido-enable-flex-matching t)
 
 (ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
 (setq ido-vertical-show-count t)
 
 (add-hook 'markdown-mode-hook 'visual-line-mode)
@@ -206,7 +206,7 @@
   (find-file "/Volumes/Promise RAID/VersionControlled/org/notes.org"))
 
 ;; "M-x projects" to quickly open projects
-(defun projects()
+(defun proj()
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/projects.org"))
 
