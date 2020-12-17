@@ -231,6 +231,12 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 ;; Capture todo template (Create a todo: "C-c c t")
 (define-key global-map (kbd "C-c c") 'org-capture)
+;; (define-key global-map (kbd "C-c s") 'org-insert-structure-template)
+
+(add-hook 'org-mode-hook (
+          lambda()
+          (local-set-key (kbd "C-c s") 'org-insert-structure-template)))
+
 ;;(global-set-key (kbd "C-b") 'org-switchb)
 
 ;; Open agande in the current window
@@ -238,7 +244,9 @@
 
 (setq org-capture-templates
       '(("t" "todo" entry (file+headline "/Volumes/Promise RAID/VersionControlled/org/todo.org" "Todos")
-	 "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")))
+      "* TODO [#B] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n")
+      ("j" "Journal" entry (file+datetree "/Volumes/Promise RAID/VersionControlled/org/todo.org")
+         "* %?\nDate %U\n  %i\n  %a")))
 
 
 ;; Configuring TODO states. These can be configured at the top of a file too.
