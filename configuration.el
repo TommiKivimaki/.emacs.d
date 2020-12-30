@@ -231,8 +231,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 ;; Capture todo template (Create a todo: "C-c c t")
 (define-key global-map (kbd "C-c c") 'org-capture)
-;; (define-key global-map (kbd "C-c s") 'org-insert-structure-template)
-
+;; Shortcut to structure templates in org mode
 (add-hook 'org-mode-hook (
           lambda()
           (local-set-key (kbd "C-c s") 'org-insert-structure-template)))
@@ -278,6 +277,16 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+;; Color emphasis for text
+(setq org-emphasis-alist (quote (("*" bold)
+("/" italic)
+("_" underline)
+("=" org-verbatim verbatim)
+("~" org-code verbatim)
+("?" (:foreground "#C2222D"))
+("+"
+(:strike-through t)))))
 
 (load-library "ox-reveal")
 ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")

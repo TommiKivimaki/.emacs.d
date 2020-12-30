@@ -440,10 +440,21 @@ install eslint'
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
-#+END_SRC
 
-#+RESULTS:
-| windmove-right |
+;; Hide the emphasis markers
+(setq org-hide-emphasis-markers t)
+
+;; Color emphasis for text
+;;(setq org-emphasis-alist (quote (("*" bold)
+;;("/" italic)
+;;("_" underline)
+;;("=" org-verbatim verbatim)
+;;("~" org-code verbatim)
+;;("?" (:foreground "#C2222D"))
+;;("+"
+;;(:strike-through t)))))
+
+#+END_SRC
 
 ** ox-reveal
    Configuration options are set in #+REVEAL_INIT_OPTIONS on top of
