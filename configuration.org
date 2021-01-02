@@ -380,7 +380,7 @@ install eslint'
   (find-file "/Volumes/Promise RAID/VersionControlled/org/content.org"))
 
 ;; "M-x content" to quickly open ukulele stuff
-(defun content()
+(defun uke()
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
