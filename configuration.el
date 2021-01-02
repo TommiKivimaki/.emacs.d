@@ -278,15 +278,18 @@
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
 
+;; Hide the emphasis markers
+(setq org-hide-emphasis-markers t)
+
 ;; Color emphasis for text
-(setq org-emphasis-alist (quote (("*" bold)
-("/" italic)
-("_" underline)
-("=" org-verbatim verbatim)
-("~" org-code verbatim)
-("?" (:foreground "#C2222D"))
-("+"
-(:strike-through t)))))
+;;(setq org-emphasis-alist (quote (("*" bold)
+;;("/" italic)
+;;("_" underline)
+;;("=" org-verbatim verbatim)
+;;("~" org-code verbatim)
+;;("?" (:foreground "#C2222D"))
+;;("+"
+;;(:strike-through t)))))
 
 (load-library "ox-reveal")
 ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")

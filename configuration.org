@@ -361,7 +361,8 @@ install eslint'
 (setq org-agenda-files (list "/Volumes/Promise RAID/VersionControlled/org/todo.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
-			     "/Volumes/Promise RAID/VersionControlled/org/content.org"))
+			     "/Volumes/Promise RAID/VersionControlled/org/content.org"
+           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -373,10 +374,15 @@ install eslint'
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/projects.org"))
 
-;; "M-x content" to quickly open projects
+;; "M-x content" to quickly open content
 (defun content()
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/content.org"))
+
+;; "M-x content" to quickly open ukulele stuff
+(defun content()
+  (interactive)
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
 
 ;; Starts to bullets
