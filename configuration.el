@@ -158,12 +158,15 @@
    (shell . t)
     (emacs-lisp . t)
     (js . t)
+    (ditaa . t)
 ))
 
 (eval-after-load "org"
   '(require 'ox-gfm nil t))
 
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(setq org-ditaa-jar-path "/usr/local/bin/ditaa")
 
 (ido-mode t)
 (ido-everywhere t)
@@ -198,7 +201,8 @@
 (setq org-agenda-files (list "/Volumes/Promise RAID/VersionControlled/org/todo.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
-			     "/Volumes/Promise RAID/VersionControlled/org/content.org"))
+			     "/Volumes/Promise RAID/VersionControlled/org/content.org"
+           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -210,10 +214,15 @@
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/projects.org"))
 
-;; "M-x content" to quickly open projects
+;; "M-x content" to quickly open content
 (defun content()
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/content.org"))
+
+;; "M-x content" to quickly open ukulele stuff
+(defun uke()
+  (interactive)
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
 
 ;; Starts to bullets

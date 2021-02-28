@@ -258,6 +258,7 @@ Enable org-babel support for these languages
      (shell . t)
       (emacs-lisp . t)
       (js . t)
+      (ditaa . t)
   ))
 #+END_SRC
 
@@ -270,6 +271,11 @@ Enabling ox-gfm markdown export from org-mode
 Enable typing y or n instead of yes and no
 #+BEGIN_SRC emacs-lisp
   (fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
+Set a path for a ditaa
+#+BEGIN_SRC emacs-lisp
+(setq org-ditaa-jar-path "/usr/local/bin/ditaa.jar")
 #+END_SRC
 
 
