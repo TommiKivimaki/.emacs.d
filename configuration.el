@@ -166,7 +166,9 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq org-ditaa-jar-path "/usr/local/bin/ditaa")
+(setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+(setq org-confirm-babel-evaluate nil)
 
 (ido-mode t)
 (ido-everywhere t)

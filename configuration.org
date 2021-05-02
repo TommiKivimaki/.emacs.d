@@ -275,7 +275,9 @@ Enable typing y or n instead of yes and no
 
 Set a path for a ditaa
 #+BEGIN_SRC emacs-lisp
-(setq org-ditaa-jar-path "/usr/local/bin/ditaa.jar")
+(setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+(setq org-confirm-babel-evaluate nil)
 #+END_SRC
 
 
@@ -368,7 +370,8 @@ install eslint'
 			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/content.org"
-           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
+           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"
+           "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -390,6 +393,10 @@ install eslint'
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
+;; "M-x trade" to quickly open trading stuff
+(defun trade()
+  (interactive)
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
 
 ;; Starts to bullets
 (add-hook 'org-mode-hook (
@@ -467,6 +474,9 @@ install eslint'
 ;;(:strike-through t)))))
 
 #+END_SRC
+
+#+RESULTS:
+: t
 
 ** ox-reveal
    Configuration options are set in #+REVEAL_INIT_OPTIONS on top of
