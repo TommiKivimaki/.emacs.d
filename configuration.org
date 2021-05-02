@@ -82,12 +82,12 @@ Set default window size
      (setq initial-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 170)
+	      (width . 120)
 	      (height . 92)))
      (setq default-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 170)
+	      (width . 120)
 	      (height . 92))))
  (progn
    (setq initial-frame-alist '((tool-bar-lines . 0)))
@@ -279,7 +279,6 @@ Set a path for a ditaa
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
-
 
 * Modes
 
