@@ -46,12 +46,12 @@
      (setq initial-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 170)
+	      (width . 120)
 	      (height . 92)))
      (setq default-frame-alist
 	    '(
 	      (tool-bar-lines . 0)
-	      (width . 170)
+	      (width . 120)
 	      (height . 92))))
  (progn
    (setq initial-frame-alist '((tool-bar-lines . 0)))
@@ -204,7 +204,8 @@
 			     "/Volumes/Promise RAID/VersionControlled/org/notes.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/content.org"
-           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
+           "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"
+           "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -226,6 +227,10 @@
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"))
 
+;; "M-x trade" to quickly open trading stuff
+(defun trade()
+  (interactive)
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
 
 ;; Starts to bullets
 (add-hook 'org-mode-hook (

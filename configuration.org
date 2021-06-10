@@ -370,7 +370,8 @@ install eslint'
 			     "/Volumes/Promise RAID/VersionControlled/org/projects.org"
 			     "/Volumes/Promise RAID/VersionControlled/org/content.org"
            "/Volumes/Promise RAID/VersionControlled/org/ukulele.org"
-           "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
+           "/Volumes/Promise RAID/VersionControlled/org/trade.org"
+           "/Volumes/Promise RAID/VersionControlled/org/howto.org"))
 
 ;; "M-x notes" to quickly open notes
 (defun notes()
@@ -396,6 +397,11 @@ install eslint'
 (defun trade()
   (interactive)
   (find-file "/Volumes/Promise RAID/VersionControlled/org/trade.org"))
+
+;; "M-x trade" to quickly open trading stuff
+(defun howto()
+  (interactive)
+  (find-file "/Volumes/Promise RAID/VersionControlled/org/howto.org"))
 
 ;; Starts to bullets
 (add-hook 'org-mode-hook (
